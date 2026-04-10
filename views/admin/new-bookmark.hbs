@@ -1,0 +1,17 @@
+<h1>New Bookmark</h1>
+
+{{#if errors}}
+  {{#each errors}}
+    <p>{{this}}</p>
+  {{/each}}
+{{/if}}
+
+<form method="POST" action="/bookmarks/new">
+  <input name="title" placeholder="title" value="{{bookmark.title}}">
+  <input name="slug" placeholder="slug" value="{{bookmark.slug}}">
+  <input name="url" placeholder="url" value="{{bookmark.url}}">
+  <input name="tags" placeholder="tag1, tag2" value="{{bookmark.tags}}">
+  <textarea name="description" placeholder="description">{{bookmark.description}}</textarea>
+
+  <button type="submit">Create</button>
+</form>

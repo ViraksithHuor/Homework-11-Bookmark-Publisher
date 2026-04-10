@@ -1,0 +1,27 @@
+<h1>All Bookmarks</h1>
+
+<a href="/bookmarks/new">New Bookmark</a>
+
+<ul>
+  {{#each bookmarks}}
+    <li>
+      {{title}} ({{slug}}) {{#if isArchived}}[Archived]{{/if}}
+
+      <form method="POST" action="/bookmarks/{{slug}}/delete" style="display:inline;">
+        <button>Delete</button>
+      </form>
+
+      {{#if isArchived}}
+        <form method="POST" action="/bookmarks/{{slug}}/unarchive" style="display:inline;">
+          <button>Unarchive</button>
+        </form>
+      {{else}}
+        <form method="POST" action="/bookmarks/{{slug}}/archive" style="display:inline;">
+          <button>Archive</button>
+        </form>
+      {{/if}}
+
+      <a href="/bookmarks/{{slug}}/edit">Edit</a>
+    </li>
+  {{/each}}
+</ul>

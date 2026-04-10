@@ -1,0 +1,9 @@
+<h1>Home</h1>
+
+<ul>
+  {{#each bookmarks}}
+    <li>
+      <a href="/bookmarks/{{slug}}">{{title}}</a>
+    </li>
+  {{/each}}
+</ul>

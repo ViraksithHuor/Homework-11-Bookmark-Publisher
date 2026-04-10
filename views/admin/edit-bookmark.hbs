@@ -1,0 +1,17 @@
+<h1>Edit Bookmark</h1>
+
+{{#if errors}}
+  {{#each errors}}
+    <p>{{this}}</p>
+  {{/each}}
+{{/if}}
+
+<form method="POST" action="/bookmarks/{{bookmark.slug}}/edit">
+  <input name="title" value="{{bookmark.title}}">
+  <input name="slug" value="{{bookmark.slug}}">
+  <input name="url" value="{{bookmark.url}}">
+  <input name="tags" value="{{bookmark.tags}}">
+  <textarea name="description">{{bookmark.description}}</textarea>
+
+  <button type="submit">Save</button>
+</form>
